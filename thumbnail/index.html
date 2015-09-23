@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Thumbnail</title>
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  
+  </head>
+  
+  <body>
+    <div class="container">
+    </div>
+  </body> 
+
+  <script type='text/jsx'>
+    // Define a 'class'
+    var Badge = React.createClass({
+      render: function () {
+        return  <button className="btn btn-primary" type="button">
+          {this.props.title} <span className="badge">{this.props.number}</span>
+        </button>            
+      }
+    });
+
+    var Thumbnail = React.createClass({
+      render: function () {
+        return <div className="col-sm-6 col-md4">
+          <div className="thumbnail">
+            <img src={this.props.imageUrl} />
+            <div className="caption">
+               <h3>{this.props.header}</h3>
+               <p>{this.props.description}</p>
+               <p>
+                <Badge title={this.props.title} number={this.props.number} />
+               </p>
+            </div>
+          </div>
+        </div>
+      }
+    });
+    
+    var options = {
+      title: 'Show Courses',
+      number: 12,
+      header: 'Learn React',
+      description: 'React is a fantastic new library for making fast, dynamic pages. React is a fantastic new library for making fast, dynamic pages.',
+      imageUrl: 'https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.png'
+    };
+
+    // React, please render this class
+    var element = React.createElement(Thumbnail, options);
+
+    // React, after you render this class, please place it in my body tag
+    React.render(element, document.querySelector('.container'));
+  </script>
+</html>
