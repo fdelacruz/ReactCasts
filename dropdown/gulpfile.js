@@ -27,3 +27,7 @@ gulp.task('default', function () {
 	build();
 	bundler.on('update', build);
 });
+
+gulp.task('watch', function () {
+	gulp.watch('src/**/*.*', ['default']);
+});
