@@ -43,8 +43,17 @@ module.exports = React.createClass({
 			return null
 		} else {
 			return [
-				<button className="btn btn-default">Save</button>,
-				<button className="btn btn-default">Undo</button>
+				<button 
+					onClick={this.handleSaveClick}
+					className="btn btn-default">
+					Save
+				</button>,
+				<button 
+					onClick={this.handleUndoClick}
+					className="btn btn-default"
+					>
+					Undo
+				</button>
 			]
 		}
 	},
@@ -61,5 +70,15 @@ module.exports = React.createClass({
 	},
 	handleDeleteClick: function () {
 		this.fb.remove();
+	},
+	handleUndoClick: function () {
+		this.setState({
+			text: this.props.item.text,
+			textChanged: false
+		})
+	},
+	handleSaveClick: function () {
+		this.fb.update({text: this.state.text});
+		this.setState({textChanged: false});
 	}
 });
