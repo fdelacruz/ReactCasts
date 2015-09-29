@@ -50,6 +50,7 @@ gulp.task('serve', function(done) {
 
 gulp.task('sass', function () {
 	return sass('source/')
+  .on('error', sass.logError)
 	.pipe(gulp.dest('dist'));
 });
 

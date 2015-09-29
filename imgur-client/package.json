@@ -20,6 +20,6 @@
     "watchify": "^2.4.0"
   },
   "devDependencies": {
-    "gulp-ruby-sass": "^1.0.0-alpha"
+    "gulp-ruby-sass": "^1.4.0"
   }
 }
