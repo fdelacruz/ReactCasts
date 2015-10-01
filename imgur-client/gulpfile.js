@@ -49,7 +49,7 @@ gulp.task('serve', function(done) {
 });
 
 gulp.task('sass', function () {
-	return sass('source/')
+	return sass('source/**/*.scss')
   .on('error', sass.logError)
 	.pipe(gulp.dest('dist'));
 });
