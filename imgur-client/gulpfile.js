@@ -49,7 +49,7 @@ gulp.task('serve', function(done) {
 });
 
 gulp.task('sass', function () {
-	return sass('source/**/*.scss')
+	return sass('sass/**/*.scss')
   .on('error', sass.logError)
 	.pipe(gulp.dest('dist'));
 });
@@ -57,5 +57,5 @@ gulp.task('sass', function () {
 gulp.task('default', ['build', 'serve', 'sass', 'watch']);
 
 gulp.task('watch', function () {
-	gulp.watch('source/**/*.scss', ['sass']);
+	gulp.watch('sass/**/*.scss', ['sass']);
 });
