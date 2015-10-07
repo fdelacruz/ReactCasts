@@ -5,6 +5,7 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var reactify = require('reactify');
 var server = require('gulp-server-livereload');
+var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
 var watch = require('gulp-watch');
 
@@ -51,6 +52,7 @@ gulp.task('serve', function(done) {
 gulp.task('sass', function () {
 	return sass('sass/**/*.scss')
   .on('error', sass.logError)
+	.pipe(concat('style.css'))
 	.pipe(gulp.dest('dist'));
 });
 
