@@ -1,5 +1,5 @@
 # imgur browser
-A simple image gallery using [Imgur](http://imgur.com/) API written in React and Flux
+A simple image gallery using [Imgur](http://imgur.com/) API written in React and Flux ([Reflux](https://github.com/reflux/refluxjs))
 ##To get started:  
 1. Install [NodeJS](http://www.nodejs.org)  
 2. Download this repo 
